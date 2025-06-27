@@ -1,0 +1,18 @@
+{
+  "name": "CollabEditor",
+  "description": "A real-time collaborative plaintext editor for the Hyperware platform",
+  "image": "",
+  "properties": {
+    "package_name": "collab-editor",
+    "current_version": "0.1.0",
+    "publisher": "collab.os",
+    "mirrors": [],
+    "code_hashes": {
+      "0.1.0": ""
+    },
+    "wit_version": 1,
+    "dependencies": []
+  },
+  "external_url": "",
+  "animation_url": ""
+}

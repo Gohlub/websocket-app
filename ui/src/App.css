@@ -1,0 +1,229 @@
+/* Main app styles for Collaborative Editor */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+/* Header */
+.app-header {
+  background: #1976d2;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.node-info {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.node-id {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.pending-invites {
+  background: #ff5722;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.not-connected {
+  color: #ffcdd2;
+}
+
+/* Error banner */
+.error-banner {
+  background: #f44336;
+  color: white;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-dismiss {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.error-dismiss:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main content */
+.app-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+/* Editor layout */
+.editor-layout {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.editor-panel {
+  flex: 1;
+  min-width: 0;
+}
+
+.participants-panel {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+/* Welcome screen */
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  color: #666;
+}
+
+.welcome-screen h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.welcome-screen p {
+  margin: 0.5rem 0;
+  max-width: 500px;
+}
+
+/* Connection error */
+.connection-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  color: #666;
+}
+
+.connection-error p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 250px;
+  }
+  
+  .participants-panel {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .app-content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: 200px;
+    flex-shrink: 0;
+  }
+  
+  .editor-layout {
+    flex-direction: column;
+  }
+  
+  .participants-panel {
+    width: 100%;
+  }
+}
+
+/* Utility classes */
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
